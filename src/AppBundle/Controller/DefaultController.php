@@ -7,6 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * This is the default controller.
+ * /
 class DefaultController extends Controller
 {
     /**
@@ -24,8 +27,12 @@ class DefaultController extends Controller
     {
         return $this->returnMaintenanceResponse();
     }
-
-
+    
+    /**
+     * Returns a maintenance response.
+     * 
+     * @return JsonResponse
+     * /
     private function returnMaintenanceResponse()
     {
         $response = new JsonResponse(array('id' => 'maintenance', 'message' => 'API is temporarily unavailable'));
